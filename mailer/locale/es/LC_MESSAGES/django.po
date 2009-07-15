@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-mailer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-15 16:30-0300\n"
+"PO-Revision-Date: 2009-07-15 17:04-0300\n"
+"Last-Translator: Marcelo Ramos <marcelor@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:7
+msgid "high"
+msgstr "alta"
+
+#: models.py:8
+msgid "medium"
+msgstr "media"
+
+#: models.py:9
+msgid "low"
+msgstr "baja"
+
+#: models.py:10
+msgid "deferred"
+msgstr "postergado"
+
+#: models.py:64
+#: models.py:106
+#: models.py:152
+msgid "to_address"
+msgstr "destinatario"
+
+#: models.py:65
+#: models.py:153
+msgid "from_address"
+msgstr "remitente"
+
+#: models.py:66
+#: models.py:154
+msgid "subject"
+msgstr "asunto"
+
+#: models.py:67
+#: models.py:155
+msgid "message_body"
+msgstr "texto del mensaje"
+
+#: models.py:68
+#: models.py:107
+#: models.py:156
+msgid "when_added"
+msgstr "cuando fue agregado"
+
+#: models.py:69
+#: models.py:157
+msgid "priority"
+msgstr "prioridad"
+
+#: models.py:86
+msgid "Message"
+msgstr "Mensaje"
+
+#: models.py:87
+msgid "Messages"
+msgstr "Mensajes"
+
+#: models.py:112
+msgid "don't send entry"
+msgstr "regla no enviar"
+
+#: models.py:113
+msgid "don't send entries"
+msgstr "reglas no enviar"
+
+#: models.py:161
+msgid "when_attempted"
+msgstr "cuando se intentó enviar"
+
+#: models.py:162
+msgid "result"
+msgstr "resultado"
+
+#: models.py:163
+msgid "log_message"
+msgstr "registro de mensaje"
+
+#: models.py:166
+msgid "Message Log"
+msgstr "Registro de Mensaje"
+
+#: models.py:167
+msgid "Message Logs"
+msgstr "Registros de Mensaje"
+

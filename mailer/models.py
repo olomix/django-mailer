@@ -1,13 +1,13 @@
 from datetime import datetime
 
 from django.db import models
-
+from django.utils.translation import ugettext as _
 
 PRIORITIES = (
-    ('1', 'high'),
-    ('2', 'medium'),
-    ('3', 'low'),
-    ('4', 'deferred'),
+    ('1', _('high')),
+    ('2', _('medium')),
+    ('3', _('low')),
+    ('4', _('deferred')),
 )
 
 
@@ -61,12 +61,12 @@ class Message(models.Model):
     
     objects = MessageManager()
     
-    to_address = models.CharField(max_length=50)
-    from_address = models.CharField(max_length=50)
-    subject = models.CharField(max_length=100)
-    message_body = models.TextField()
-    when_added = models.DateTimeField(default=datetime.now)
-    priority = models.CharField(max_length=1, choices=PRIORITIES, default='2')
+    to_address = models.CharField(max_length=50, verbose_name=_('to_address'))
+    from_address = models.CharField(max_length=50, verbose_name=_('from_address'))
+    subject = models.CharField(max_length=100, verbose_name=_('subject'))
+    message_body = models.TextField(verbose_name=_('message_body'))
+    when_added = models.DateTimeField(default=datetime.now, verbose_name=_('when_added'))
+    priority = models.CharField(max_length=1, choices=PRIORITIES, default='2', verbose_name=_('priority'))
     # @@@ campaign?
     # @@@ content_type?
     
@@ -82,6 +82,9 @@ class Message(models.Model):
         else:
             return False
     
+    class Meta:
+        verbose_name = _('Message')
+        verbose_name_plural = _('Messages')
 
 class DontSendEntryManager(models.Manager):
     
@@ -100,14 +103,14 @@ class DontSendEntry(models.Model):
     
     objects = DontSendEntryManager()
     
-    to_address = models.CharField(max_length=50)
-    when_added = models.DateTimeField()
+    to_address = models.CharField(max_length=50, verbose_name=_('to_address'))
+    when_added = models.DateTimeField(verbose_name=_('when_added'))
     # @@@ who added?
     # @@@ comment field?
     
     class Meta:
-        verbose_name = 'don\'t send entry'
-        verbose_name_plural = 'don\'t send entries'
+        verbose_name = _('don\'t send entry')
+        verbose_name_plural = _('don\'t send entries')
     
 
 RESULT_CODES = (
@@ -146,16 +149,20 @@ class MessageLog(models.Model):
     objects = MessageLogManager()
     
     # fields from Message
-    to_address = models.CharField(max_length=50)
-    from_address = models.CharField(max_length=50)
-    subject = models.CharField(max_length=100)
-    message_body = models.TextField()
-    when_added = models.DateTimeField()
-    priority = models.CharField(max_length=1, choices=PRIORITIES)
+    to_address = models.CharField(max_length=50, verbose_name=_('to_address'))
+    from_address = models.CharField(max_length=50, verbose_name=_('from_address'))
+    subject = models.CharField(max_length=100, verbose_name=_('subject'))
+    message_body = models.TextField(verbose_name=_('message_body'))
+    when_added = models.DateTimeField(verbose_name=_('when_added'))
+    priority = models.CharField(max_length=1, choices=PRIORITIES, verbose_name=_('priority'))
     # @@@ campaign?
     
     # additional logging fields
-    when_attempted = models.DateTimeField(default=datetime.now)
-    result = models.CharField(max_length=1, choices=RESULT_CODES)
-    log_message = models.TextField()
+    when_attempted = models.DateTimeField(default=datetime.now, verbose_name=_('when_attempted'))
+    result = models.CharField(max_length=1, choices=RESULT_CODES, verbose_name=_('result'))
+    log_message = models.TextField(verbose_name=_('log_message'))
     
+    class Meta:
+        verbose_name = _('Message Log')
+        verbose_name_plural = _('Message Logs')
+
