@@ -114,9 +114,9 @@ class DontSendEntry(models.Model):
     
 
 RESULT_CODES = (
-    ('1', 'success'),
-    ('2', 'don\'t send'),
-    ('3', 'failure'),
+    ('1', _('success')),
+    ('2', _('don\'t send')),
+    ('3', _('failure')),
     # @@@ other types of failure?
 )
 
