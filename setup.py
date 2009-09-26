@@ -13,7 +13,6 @@ setup(
         'mailer.management',
         'mailer.management.commands',
     ],
-    package_dir={'mailer': 'mailer'},
     package_data = {
         'mailer': [
             'locale/*/LC_MESSAGES/*',
@@ -27,5 +26,6 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Framework :: Django',
-    ]
+    ],
+    zip_safe=False,
 )
